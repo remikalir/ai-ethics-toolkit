@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap');
+
+:root {
+  --bg: #FAFAF8;
+  --card: #FFFFFF;
+  --t1: #1A1A1A;
+  --t2: #6B6B6B;
+  --brd: #E8E6E1;
+  --f: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --duke: #003087;
+  --navy: #001A57;
+  --accent: #2A9D8F;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--f);
+  background: var(--bg);
+  color: var(--t1);
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid rgba(42, 157, 143, 0.25);
+  outline-offset: 1px;
+}
+
+button:focus-visible {
+  outline: 2px solid rgba(42, 157, 143, 0.4);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: rgba(42, 157, 143, 0.15);
+}
