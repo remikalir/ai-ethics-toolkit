@@ -193,7 +193,6 @@ function TopicView({ topic, role, onBack, onNavigate, progress, toggleProgress, 
   return (
     <div style={{ animation: "fadeIn 0.4s ease" }}>
       <div style={{ background: `linear-gradient(135deg, ${topic.color}10, ${topic.accent}20)`, borderRadius: 20, padding: "36px 32px", marginBottom: 28, position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", top: -20, right: 10, opacity: 0.08 }}><TopicIllustration topicId={topic.id} size={200}/></div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16, flexWrap: "wrap", gap: 8 }}>
           <button onClick={onBack} style={{ background: "var(--card)", border: "1px solid var(--brd)", borderRadius: 10, padding: "8px 16px", cursor: "pointer", fontFamily: "var(--f)", fontSize: 13, fontWeight: 600, color: "var(--t2)" }}>← Back</button>
           <div style={{ display: "flex", gap: 8 }}>
@@ -447,7 +446,7 @@ export default function App() {
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
               {role && <ProgressRing completed={progress.length} total={TOPICS.length}/>}
               {role && <div style={{ background: "rgba(255,255,255,0.15)", borderRadius: 20, padding: "4px 12px", fontFamily: "var(--f)", fontSize: 12, color: "rgba(255,255,255,0.9)", fontWeight: 600 }}>{role === "student" ? "🎓 Student" : "📚 Instructor"}</div>}
-              {role && <button onClick={() => { setRole(null); go("home"); }} style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 8, padding: "4px 10px", cursor: "pointer", fontFamily: "var(--f)", fontSize: 11, color: "rgba(255,255,255,0.7)" }}>Switch</button>}
+              {role && <button onClick={() => { setRole(null); setProgress([]); saveStorage(STORAGE_KEYS.progress, []); go("home"); }} style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 8, padding: "4px 10px", cursor: "pointer", fontFamily: "var(--f)", fontSize: 11, color: "rgba(255,255,255,0.7)" }}>Switch</button>}
             </div>
           </div>
         </header>
